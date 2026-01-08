@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "pratyusa/user-discounts",
+    "description": "This is my package user-discounts",
     "keywords": [
-        ":vendor_name",
+        "Pratyusa-Git",
         "laravel",
-        ":package_slug"
+        "user-discounts"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/pratyusa/user-discounts",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Pratyusa-Git",
+            "email": "60543278+Pratyusa-Git@users.noreply.github.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "App\\UserDiscounts\\": "src/",
+            "App\\UserDiscounts\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "App\\UserDiscounts\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -63,10 +63,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "App\\UserDiscounts\\UserDiscountsServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "UserDiscounts": "App\\UserDiscounts\\Facades\\UserDiscounts"
             }
         }
     },

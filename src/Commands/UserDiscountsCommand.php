@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace App\UserDiscounts\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class UserDiscountsCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'user-discounts';
 
     public $description = 'My command';
 
