@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class UserDiscount extends Model
 {
     protected $guarded = ['id'];
+
     protected $casts = ['revoked_at' => 'datetime'];
 
     public function user(): BelongsTo

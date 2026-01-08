@@ -2,9 +2,9 @@
 
 namespace Devpratyusa\UserDiscounts\Events;
 
+use Devpratyusa\UserDiscounts\Models\DiscountAudit;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use Devpratyusa\UserDiscounts\Models\DiscountAudit;
 
 class DiscountApplied
 {

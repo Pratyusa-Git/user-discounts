@@ -36,13 +36,17 @@ class DiscountManager
 
     public function eligibleFor($user, Discount $discount): bool
     {
-        if (!$discount->isActive()) return false;
+        if (! $discount->isActive()) {
+            return false;
+        }
 
         $pivot = UserDiscount::where('user_id', $user->id)
             ->where('discount_id', $discount->id)
             ->first();
 
-        if (!$pivot || $pivot->isRevoked()) return false;
+        if (! $pivot || $pivot->isRevoked()) {
+            return false;
+        }
 
         if ($discount->max_usage_per_user && $pivot->usages >= $discount->max_usage_per_user) {
             return false;
@@ -54,6 +58,7 @@ class DiscountManager
     public function apply($user, float $amount, ?string $applicationUid = null): float
     {
         $result = $this->applyWithDetails($user, $amount, $applicationUid);
+
         return $result['final_amount'];
     }
 
@@ -65,6 +70,7 @@ class DiscountManager
             // Idempotency check
             if (DiscountAudit::where('application_uid', $applicationUid)->exists()) {
                 $existing = DiscountAudit::where('application_uid', $applicationUid)->first();
+
                 return [
                     'final_amount' => $existing->discounted_amount,
                     'saved' => $existing->saved,
@@ -87,6 +93,7 @@ class DiscountManager
                 if ($discount->type === 'percentage') {
                     if ($totalPercentageApplied + $discount->value > $config['max_percentage_cap']) {
                         $skipped[] = ['discount' => $discount, 'reason' => 'percentage_cap_exceeded'];
+
                         continue;
                     }
                 }
@@ -155,6 +162,6 @@ class DiscountManager
             ->orderByRaw($order)
             ->select('user_discounts.*')
             ->get()
-            ->filter(fn($pivot) => $pivot->discount->isActive());
+            ->filter(fn ($pivot) => $pivot->discount->isActive());
     }
 }

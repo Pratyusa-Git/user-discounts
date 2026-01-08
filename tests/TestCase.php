@@ -2,8 +2,8 @@
 
 namespace Devpratyusa\UserDiscounts\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Devpratyusa\UserDiscounts\UserDiscountsServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

@@ -7,7 +7,6 @@ use Devpratyusa\UserDiscounts\Models\DiscountAudit;
 use Devpratyusa\UserDiscounts\Models\UserDiscount;
 use Devpratyusa\UserDiscounts\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\DB;
 
 class DiscountApplicationTest extends TestCase
 {

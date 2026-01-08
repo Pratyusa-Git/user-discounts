@@ -22,10 +22,17 @@ class Discount extends Model
 
     public function isActive(): bool
     {
-        if (!$this->active) return false;
+        if (! $this->active) {
+            return false;
+        }
         $now = now();
-        if ($this->starts_at && $this->starts_at->gt($now)) return false;
-        if ($this->ends_at && $this->ends_at->lt($now)) return false;
+        if ($this->starts_at && $this->starts_at->gt($now)) {
+            return false;
+        }
+        if ($this->ends_at && $this->ends_at->lt($now)) {
+            return false;
+        }
+
         return true;
     }
 }

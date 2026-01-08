@@ -26,7 +26,7 @@ class UserDiscountsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/user-discounts.php', 'user-discounts');
 
         $this->app->singleton('Devpratyusa\UserDiscounts\Services\DiscountManager', function () {
-            return new \Devpratyusa\UserDiscounts\Services\DiscountManager();
+            return new \Devpratyusa\UserDiscounts\Services\DiscountManager;
         });
     }
 }
